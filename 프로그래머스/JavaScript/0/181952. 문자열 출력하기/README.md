@@ -1,6 +1,6 @@
-# [level 0] 문자열 출력하기 - 181952 
+# [level 0] 문자열 출력하기 - 181952
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181952) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181952)
 
 ### 성능 요약
 
@@ -41,5 +41,17 @@
 <p>출력 #1</p>
 <div class="highlight"><pre class="codehilite"><code>HelloWorld!
 </code></pre></div>
+
+---
+
+## 해결
+
+### 접근 방식
+
+- 입력 문자열을 그대로 출력한다.
+
+### 주의 / 실수 포인트
+
+-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
