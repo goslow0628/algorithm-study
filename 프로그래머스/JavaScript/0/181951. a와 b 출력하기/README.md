@@ -1,6 +1,6 @@
-# [level 0] a와 b 출력하기 - 181951 
+# [level 0] a와 b 출력하기 - 181951
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181951) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181951)
 
 ### 성능 요약
 
@@ -41,5 +41,17 @@
 <div class="highlight"><pre class="codehilite"><code>a = 4
 b = 5
 </code></pre></div>
+
+---
+
+## 해결
+
+### 접근 방식
+
+- 한 줄로 입력된 문자열을 공백 기준으로 나눠서 a, b를 얻고, 출력 형식에 맞게 출력한다.
+
+### 주의 / 실수 포인트
+
+-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
