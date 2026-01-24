@@ -1,6 +1,6 @@
-# [level 0] 대소문자 바꿔서 출력하기 - 181949 
+# [level 0] 대소문자 바꿔서 출력하기 - 181949
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181949) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181949)
 
 ### 성능 요약
 
@@ -48,5 +48,19 @@
 
 <p>※2023년 05월 03일 제한사항이 수정되었습니다.</p>
 
+---
+
+## 해결
+
+### 접근 방식
+
+- 문자열을 한 글자씩 순회하며 각 문자의 대소문자를 판별한다.
+- 대문자인 경우 소문자로, 소문자인 경우 대문자로 변환하여 결과 문자열에 누적한다.
+
+### 주의 / 실수 포인트
+
+- `toUpperCase()` / `toLowerCase()` 메소드를 이용한 대소문자 판별은 입력이 알파벳으로만 구성된다는 제한사항을 전제로 한다.
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
