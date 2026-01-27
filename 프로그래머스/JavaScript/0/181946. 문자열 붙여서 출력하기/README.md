@@ -1,6 +1,6 @@
-# [level 0] 문자열 붙여서 출력하기 - 181946 
+# [level 0] 문자열 붙여서 출력하기 - 181946
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181946?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181946?language=javascript)
 
 ### 성능 요약
 
@@ -47,5 +47,33 @@
 <p>출력 #2</p>
 <div class="highlight"><pre class="codehilite"><code>HelloWorld!
 </code></pre></div>
+
+---
+
+### 풀이
+
+- 분리된 두 문자열을 `+` 연산자를 사용해 그대로 이어 붙여 출력한다.
+
+### 소스 코드
+
+```javascript
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+let input = [];
+
+rl.on("line", function (line) {
+  input = line.split(" ");
+}).on("close", function () {
+  str1 = input[0];
+  str2 = input[1];
+  console.log(str1 + str2);
+});
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
