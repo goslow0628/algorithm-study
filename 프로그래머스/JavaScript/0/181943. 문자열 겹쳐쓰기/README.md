@@ -1,6 +1,6 @@
-# [level 0] 문자열 겹쳐쓰기 - 181943 
+# [level 0] 문자열 겹쳐쓰기 - 181943
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181943?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181943?language=javascript)
 
 ### 성능 요약
 
@@ -73,5 +73,24 @@
 <li>예제 2번의 <code>my_string</code>에서 인덱스 7부터 <code>overwrite_string</code>의 길이만큼에 해당하는 부분은 "29b8UYP"이고 이를 "merS123"로 바꾼 "ProgrammerS123"를 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+- 문자열의 일부를 다른 문자열로 바꿔야 하는 문제라서 문자열 상태에서 직접 처리하기보다는 수정이 쉬운 배열로 바꾸는 방식으로 접근했다.
+  먼저 `my_string`을 전개 연산자를 사용해 문자 배열로 변환한 뒤 시작 인덱스 `s`부터 `overwrite_string`의 길이만큼을`splice`로 제거하고 해당 위치에 `overwrite_string`을 넣었다.
+  이 과정이 끝나면 결과가 문자 배열 형태이기 때문에 최종 반환 형식에 맞추기 위해 `join("")`을 사용해 배열의 모든 요소를 하나의 문자열로 합쳐 결과를 반환했다.
+
+### 소스 코드
+
+```javascript
+function solution(my_string, overwrite_string, s) {
+  const arr = [...my_string];
+  arr.splice(s, overwrite_string.length, overwrite_string);
+  return arr.join("");
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
