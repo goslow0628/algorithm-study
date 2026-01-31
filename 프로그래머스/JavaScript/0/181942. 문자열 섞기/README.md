@@ -1,6 +1,6 @@
-# [level 0] 문자열 섞기 - 181942 
+# [level 0] 문자열 섞기 - 181942
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181942?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181942?language=javascript)
 
 ### 성능 요약
 
@@ -53,5 +53,29 @@
 </tr>
 </tbody>
       </table>
+
+---
+
+### 풀이
+
+- 두 문자열의 길이가 같고 같은 인덱스의 문자를 순서대로 이어 붙이면 된다고 판단했다.
+  반복문을 사용해 인덱스 `0`부터 끝까지 순회하면서 각 반복마다 `str1[i]`와 `str2[i]`를 차례로 결과 문자열에 더하는 방식으로 접근했다.
+  문제에서 요구하는 결과는 문자열이므로 중간 과정에서 별도의 배열을 사용하지 않고 문자열 누적 방식으로 최종 결과를 만들었다.
+
+### 소스 코드
+
+```javascript
+function solution(str1, str2) {
+  let result = "";
+
+  for (i = 0; i < str1.length; i++) {
+    result += str1[i] + str2[i];
+  }
+
+  return result;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
