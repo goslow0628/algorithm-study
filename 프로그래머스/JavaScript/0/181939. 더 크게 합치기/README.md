@@ -1,6 +1,6 @@
-# [level 0] 더 크게 합치기 - 181939 
+# [level 0] 더 크게 합치기 - 181939
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181939?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181939?language=javascript)
 
 ### 성능 요약
 
@@ -77,5 +77,28 @@
 <li><code>a</code> ⊕ <code>b</code> = 898 이고, <code>b</code> ⊕ <code>a</code> = 889 입니다. 둘 중 더 큰 값은 898 이므로 898을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+- 두 정수 `a`, `b`를 문자열로 변환해 각각 `a ⊕ b`, `b ⊕ a` 형태로 이어 붙은 값을 만든 뒤 두 문자열을 비교해 더 큰 값을 선택한다.  
+  제출한 코드에서는 `if`문을 사용해 비교 결과에 따라 값을 반환했으며 같은 로직을 삼항 연산자로 표현하면 `result1 >= result2 ? Number(result1) : Number(result2)` 형태로 더 간결하게 작성할 수 있다.
+
+### 소스 코드
+
+```javascript
+function solution(a, b) {
+  const result1 = String(a) + String(b);
+  const result2 = String(b) + String(a);
+
+  if (result1 >= result2) {
+    return Number(result1);
+  } else {
+    return Number(result2);
+  }
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
