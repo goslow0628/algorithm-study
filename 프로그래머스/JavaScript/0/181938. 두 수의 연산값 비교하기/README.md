@@ -1,6 +1,6 @@
-# [level 0] 두 수의 연산값 비교하기 - 181938 
+# [level 0] 두 수의 연산값 비교하기 - 181938
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181938?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181938?language=javascript)
 
 ### 성능 요약
 
@@ -81,5 +81,28 @@
 
 <p>※ 2023년 04월 27일 입출력 예 설명이 수정되었습니다.</p>
 
+---
+
+### 풀이
+
+- 두 정수 `a`, `b`를 문자열로 변환해 이어 붙인 값과 산술 연산 결과인 `2 * a * b`를 각각 계산한 뒤 두 값을 비교해 더 큰 값을 선택한다.  
+  제출한 코드에서는 `if`문을 사용해 비교 결과에 따라 값을 반환했으며, 같은 로직을 삼항 연산자로 표현하면 `result1 >= result2 ? result1 : result2` 형태로 작성할 수 있다.
+
+### 소스 코드
+
+```javascript
+function solution(a, b) {
+  const result1 = Number(String(a) + String(b));
+  const result2 = 2 * a * b;
+
+  if (result1 >= result2) {
+    return result1;
+  }
+
+  return result2;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
