@@ -1,6 +1,6 @@
-# [level 0] n의 배수 - 181937 
+# [level 0] n의 배수 - 181937
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181937?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181937?language=javascript)
 
 ### 성능 요약
 
@@ -69,5 +69,28 @@
 <li>32는 3의 배수가 아니므로 0을 return합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+- `num`이 `n`으로 나누어 떨어지는지 확인해서 배수 여부를 판단한다.  
+  나머지 연산자 `%`를 사용해 결과가 `0`이면 배수이므로 `1`을 반환하고 아니면 `0`을 반환한다.
+
+### 소스 코드
+
+```javascript
+function solution(num, n) {
+  let answer = 0;
+
+  if (num % n === 0) {
+    answer = 1;
+  } else {
+    answer = 0;
+  }
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
