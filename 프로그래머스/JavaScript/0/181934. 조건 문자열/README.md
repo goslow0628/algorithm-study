@@ -1,6 +1,6 @@
-# [level 0] 조건 문자열 - 181934 
+# [level 0] 조건 문자열 - 181934
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181934) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181934)
 
 ### 성능 요약
 
@@ -91,5 +91,28 @@
 
 <p>※ 2023.05.31 테스트 케이스가 수정되었습니다. 기존에 제출한 코드가 통과하지 못할 수도 있습니다.</p>
 
+---
+
+### 풀이
+
+문자열 `ineq`와 `eq`의 조합에 따라 어떤 비교 연산을 해야 하는지 먼저 정리했다.  
+비교 조건은 총 네 가지 경우뿐이므로 문자열 값을 기준으로 조건문으로 직접 분기하는 방식이 가장 명확하다고 판단했다.
+
+eq가 `'='`인 경우에는 같음이 포함될 수 있으므로 `n === m`을 먼저 처리했고, 이후 `ineq` 값에 따라 `<` 또는 `>` 비교를 수행해 조건을 만족하면 `1`을 반환하도록 했다.
+
+어떤 조건에도 해당하지 않으면 비교가 성립하지 않으므로 `0`을 반환한다.
+
+### 소스 코드
+
+```javascript
+function solution(ineq, eq, n, m) {
+  if (eq === '=' && n === m) return 1;
+  if (ineq === '<' && n < m) return 1;
+  if (ineq === '>' && n > m) return 1;
+  return 0;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
