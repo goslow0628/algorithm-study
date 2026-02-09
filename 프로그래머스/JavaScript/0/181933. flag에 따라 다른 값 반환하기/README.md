@@ -1,6 +1,6 @@
-# [level 0] flag에 따라 다른 값 반환하기 - 181933 
+# [level 0] flag에 따라 다른 값 반환하기 - 181933
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181933) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181933)
 
 ### 성능 요약
 
@@ -71,5 +71,29 @@
 <li>예제 2번에서 <code>flag</code>가 false이므로 <code>a</code> - <code>b</code> = (-4) - 7 = -11을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+`flag`가 `true`인 경우에는 두 수를 더한 값을 반환하고, `false`인 경우에는 두 수를 뺀 값을 반환하면 되기 때문에 조건문이 필요하다고 판단했다.  
+이에 따라 `if` 문을 사용해 `flag`가 `true`일 때는 `a + b`, 그렇지 않을 때는 `a - b`를 반환하도록 구현했다.
+
+문제를 제출한 뒤 다른 사람들의 풀이를 살펴보면서 삼항 연산자로도 표현할 수 있다는 점을 알게 되었고 `return flag ? a + b : a - b;` 형태로 더 간결하게 작성할 수도 있겠다고 생각했다.
+
+### 소스 코드
+
+```javascript
+function solution(a, b, flag) {
+  let answer = 0;
+  if (flag === true) {
+    answer = a + b;
+  } else {
+    answer = a - b;
+  }
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
