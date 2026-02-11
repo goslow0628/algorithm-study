@@ -1,6 +1,6 @@
-# [level 0] 등차수열의 특정한 항만 더하기 - 181931 
+# [level 0] 등차수열의 특정한 항만 더하기 - 181931
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181931) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181931)
 
 ### 성능 요약
 
@@ -136,5 +136,30 @@
 </tbody>
       </table><div class="highlight"><pre class="codehilite"><code>따라서 4항만 true이므로 10을 return 합니다.
 </code></pre></div>
+
+---
+
+### 풀이
+
+`included`의 길이 `n`이 곧 “1항~n항까지 확인해야 하는 범위” 라서 배열을 `0`부터 끝까지 순회하면서 각 인덱스 `i`가 의미하는 항 `(i+1항)`을 차례대로 검사한다고 정리했다.  
+등차수열의 `k`번째 항은 `a + (k-1) * d` 이므로 인덱스 `i(= k-1)`에 해당하는 값은 `a + i * d`로 바로 계산할 수 있다.  
+따라서 반복문에서 `included[i]`가 `true`인 경우에만 그 항의 값을 `answer`에 누적해서 더하고 모든 인덱스를 확인한 뒤 누적 합을 반환하도록 구성했다.
+
+### 소스 코드
+
+```javascript
+function solution(a, d, included) {
+  let answer = 0;
+
+  for (i = 0; i < included.length; i++) {
+    if (included[i]) {
+      answer += a + i * d;
+    }
+  }
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
