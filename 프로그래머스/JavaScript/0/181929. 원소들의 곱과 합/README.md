@@ -1,6 +1,6 @@
-# [level 0] 원소들의 곱과 합 - 181929 
+# [level 0] 원소들의 곱과 합 - 181929
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181929) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181929)
 
 ### 성능 요약
 
@@ -66,5 +66,31 @@
 <li>모든 원소의 곱은 840, 합의 제곱은 529이므로 0을 return합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+`add`는 `0`으로, `mul`은 `곱`을 위한 초기값이 필요하니까 `1`로 두고 반복문을 돌면서 `add += num_list[i]`, `mul *= num_list[i]` 형태로 같이 계산했다.  
+반복이 끝난 뒤에 합의 제곱이 필요하니까 `add = add * add`로 한 번 더 처리하고 마지막에 `mul < add` 조건만 비교해서 `1` 또는 `0`을 반환하도록 구성했다.
+
+### 소스 코드
+
+```javascript
+function solution(num_list) {
+  let add = 0;
+  let mul = 1;
+  for (let i = 0; i < num_list.length; i++) {
+    mul *= num_list[i];
+    add += num_list[i];
+  }
+  add = add * add;
+  if (mul < add) {
+    return 1;
+  }
+  return 0;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
