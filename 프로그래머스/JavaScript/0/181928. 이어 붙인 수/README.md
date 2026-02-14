@@ -1,6 +1,6 @@
-# [level 0] 이어 붙인 수 - 181928 
+# [level 0] 이어 붙인 수 - 181928
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181928) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181928)
 
 ### 성능 요약
 
@@ -67,5 +67,32 @@
 <li>홀수만 이어 붙인 수는 573이고 짝수만 이어 붙인 수는 8입니다. 두 수의 합은 581입니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+배열을 순회하면서 `% 2` 연산으로 홀수와 짝수를 구분했다. 홀수는 하나의 문자열 변수에, 짝수는 다른 문자열 변수에 `+=`로 이어 붙였다.  
+이어 붙인 값을 실제 수치 계산이 가능한 숫자형으로 바꾸기 위해 `Number()` 메소드를 사용해 숫자로 변환한 뒤 두 값을 더해 최종 결과를 반환했다.
+
+### 소스 코드
+
+```javascript
+function solution(num_list) {
+  let odd = '';
+  let even = '';
+
+  for (let num of num_list) {
+    if (num % 2 === 0) {
+      even += num;
+    } else {
+      odd += num;
+    }
+  }
+
+  return Number(odd) + Number(even);
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
