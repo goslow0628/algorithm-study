@@ -1,6 +1,6 @@
-# [level 0] 마지막 두 원소 - 181927 
+# [level 0] 마지막 두 원소 - 181927
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927)
 
 ### 성능 요약
 
@@ -66,5 +66,29 @@
 <li>마지막 원소인 5가 그전 원소인 7보다 크지 않기 때문에 5의 두 배인 10을 추가해 return합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문제를 읽고 배열 전체를 도는 게 아니라 마지막 원소랑 그 전 원소만 비교하면 된다고 생각했다. 그래서 배열의 길이를 이용해 마지막 값은 `length - 1`, 그 전 값은 `length - 2`로 접근했다. 두 값을 비교해서 마지막 값이 더 크면 차이를 구하고 아니면 마지막 값을 두 배로 만들도록 조건문을 작성했다. 계산한 값은 `push()`를 사용해 배열 맨 뒤에 추가한 뒤 그대로 반환하도록 구현했다.
+
+### 소스 코드
+
+```javascript
+function solution(num_list) {
+  const last = num_list[num_list.length - 1];
+  const prev = num_list[num_list.length - 2];
+
+  if (last > prev) {
+    num_list.push(last - prev);
+  } else {
+    num_list.push(last * 2);
+  }
+
+  return num_list;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
