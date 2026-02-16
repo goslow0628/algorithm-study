@@ -1,6 +1,6 @@
-# [level 0] 수 조작하기 1 - 181926 
+# [level 0] 수 조작하기 1 - 181926
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181926) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181926)
 
 ### 성능 요약
 
@@ -73,5 +73,37 @@
 <li>따라서 -1을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문자열 `control`을 앞에서부터 한 글자씩 읽으면서 각 문자를 수의 변화량으로 해석하는 방식으로 접근했다.  
+`w, s, d, a` 각각을 `+1, -1, +10, -10`으로 매핑하여 반복문 안에서 `n`에 누적 더해 최종 값을 도출했다.
+
+### 소스 코드
+
+```javascript
+function solution(n, control) {
+  for (const ch of control) {
+    switch (ch) {
+      case 'w':
+        n += 1;
+        break;
+      case 's':
+        n -= 1;
+        break;
+      case 'd':
+        n += 10;
+        break;
+      case 'a':
+        n -= 10;
+        break;
+    }
+  }
+  return n;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
