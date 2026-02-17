@@ -1,6 +1,6 @@
-# [level 0] 수 조작하기 2 - 181925 
+# [level 0] 수 조작하기 2 - 181925
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181925) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181925)
 
 ### 성능 요약
 
@@ -79,5 +79,35 @@
 
 <p>입출력 예 #1은 "수 조작하기 1" 문제의 입출력 예 #1과 같은 예시이므로 참고하시기 바랍니다.</p>
 
+---
+
+### 풀이
+
+`numLog[i]`는 직전 값에서 한 번 조작된 결과이므로 두 값의 차이 `numLog[i] - numLog[i-1]`를 구하면 어떤 명령이 실행됐는지 복원할 수 있다고 판단했다.  
+차이값이 `1, -1, 10, -10` 중 하나로만 주어진다는 조건을 이용해 이를 각각 `'w', 's', 'd', 'a'`에 매핑했고 반복문으로 배열을 한 번 순회하며 명령을 순서대로 배열에 `push()`로 저장했다.
+
+`push()`는 배열의 맨 뒤에 요소를 추가하는 메소드로 명령을 순서대로 누적하기 위해 사용했다.  
+이후 `join()` 메소드를 사용해 배열에 저장된 문자들을 하나의 문자열로 합쳐 최종 결과를 반환했다.
+
+### 소스 코드
+
+```javascript
+function solution(numLog) {
+  const commands = [];
+
+  for (let i = 1; i < numLog.length; i++) {
+    const diff = numLog[i] - numLog[i - 1];
+
+    if (diff === 1) commands.push('w');
+    else if (diff === -1) commands.push('s');
+    else if (diff === 10) commands.push('d');
+    else if (diff === -10) commands.push('a');
+  }
+
+  return commands.join('');
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
