@@ -1,6 +1,6 @@
-# [level 0] 수열과 구간 쿼리 2 - 181923 
+# [level 0] 수열과 구간 쿼리 2 - 181923
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181923) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181923)
 
 ### 성능 요약
 
@@ -75,5 +75,42 @@
 <li>따라서 [3, 4, -1]을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문제를 읽고 각 쿼리마다 `s`부터 `e`까지의 범위 안에서 `k`보다 큰 값 중 가장 작은 값을 찾아야 한다는 구조라고 이해했다.  
+따라서 쿼리를 하나씩 처리하면서 해당 구간을 직접 순회하는 방식으로 해결하기로 했다.
+
+구간을 돌면서 `k`보다 큰 값만 조건으로 걸러내고 그 중 최소값을 계속 비교하며 갱신하는 방식으로 구현했다.  
+처음에는 아직 값을 찾지 못한 상태를 표현하기 위해 `min`을 `null`로 두고 조건을 만족하는 값이 나올 때만 갱신하도록 구성했다.
+
+탐색이 끝난 뒤에도 값이 갱신되지 않았다면 조건을 만족하는 값이 없는 경우이므로 `-1`을 반환하도록 처리했다.
+
+### 소스 코드
+
+```javascript
+function solution(arr, queries) {
+  const answer = [];
+
+  for (const [s, e, k] of queries) {
+    let min = null;
+
+    for (let i = s; i <= e; i++) {
+      const value = arr[i];
+
+      if (value > k && (min === null || value < min)) {
+        min = value;
+      }
+    }
+
+    answer.push(min === null ? -1 : min);
+  }
+
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
