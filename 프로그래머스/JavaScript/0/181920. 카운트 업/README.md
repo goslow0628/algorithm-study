@@ -1,6 +1,6 @@
-# [level 0] 카운트 업 - 181920 
+# [level 0] 카운트 업 - 181920
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181920) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181920)
 
 ### 성능 요약
 
@@ -57,5 +57,27 @@
 <li>3부터 10까지의 숫자들을 담은 리스트 [3, 4, 5, 6, 7, 8, 9, 10]를 return합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문제를 읽고 `start_num`부터 `end_num`까지 `1`씩 증가시키면서 값을 배열에 담으면 된다고 이해했다.  
+따라서 반복문을 사용해 시작값부터 끝값까지 순차적으로 `push`하는 방식으로 구현했다.
+
+### 소스 코드
+
+```javascript
+function solution(start_num, end_num) {
+  const result = [];
+
+  for (let i = start_num; i <= end_num; i++) {
+    result.push(i);
+  }
+
+  return result;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
