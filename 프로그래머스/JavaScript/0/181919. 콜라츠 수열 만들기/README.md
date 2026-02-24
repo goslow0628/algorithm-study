@@ -1,6 +1,6 @@
-# [level 0] 콜라츠 수열 만들기 - 181919 
+# [level 0] 콜라츠 수열 만들기 - 181919
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181919) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181919)
 
 ### 성능 요약
 
@@ -108,5 +108,35 @@
 <li>따라서 [10, 5, 16, 8, 4, 2, 1]을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문제를 읽고 현재 값이 `1`이 될 때까지 조건에 따라 계속 값을 바꾸면서 수열을 만들어야 한다는 구조라고 이해했다.  
+그래서 반복문을 사용해 `n !== 1`인 동안 계속 연산하도록 구성했다.
+
+현재 값이 짝수이면 `2`로 나누고 홀수면 `3 \* n + 1`로 변경한 뒤 그 값을 배열에 순서대로 저장하도록 구현했다.  
+초기값도 수열에 포함되어야 하므로 반복 전에 먼저 배열에 담도록 처리했다.
+
+### 소스 코드
+
+```javascript
+function solution(n) {
+  const result = [n];
+
+  while (n !== 1) {
+    if (n % 2 === 0) {
+      n = n / 2;
+    } else {
+      n = 3 * n + 1;
+    }
+    result.push(n);
+  }
+
+  return result;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
