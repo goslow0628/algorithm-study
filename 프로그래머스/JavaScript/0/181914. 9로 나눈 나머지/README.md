@@ -1,6 +1,6 @@
-# [level 0] 9로 나눈 나머지 - 181914 
+# [level 0] 9로 나눈 나머지 - 181914
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914)
 
 ### 성능 요약
 
@@ -68,5 +68,26 @@
 <li>예제 2번의 <code>number</code>는 78720646226947352489으로 각자리 숫자의 합은 101입니다. 101을 9로 나눈 나머지는 2이고, 실제로 78720646226947352489 = 9 × 8746738469660816943 + 2입니다. 따라서 2를 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문제에서 제시한 성질을 그대로 활용해 문자열 `number`를 순회하면서 각 자리 숫자를 숫자로 변환하여 모두 더한 뒤 그 합을 `9`로 나눈 나머지를 반환했다. `number`의 길이가 최대 `100,000`이므로 정수 변환 없이 문자열 순회 방식으로 해결했다.
+
+### 소스 코드
+
+```javascript
+function solution(number) {
+  let sum = 0;
+
+  for (let i = 0; i < number.length; i++) {
+    sum += Number(number[i]);
+  }
+
+  return sum % 9;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
