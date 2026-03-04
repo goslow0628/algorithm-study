@@ -1,6 +1,6 @@
-# [level 0] 부분 문자열 이어 붙여 문자열 만들기 - 181911 
+# [level 0] 부분 문자열 이어 붙여 문자열 만들기 - 181911
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181911) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181911)
 
 ### 성능 요약
 
@@ -97,5 +97,31 @@
 </tbody>
       </table><div class="highlight"><pre class="codehilite"><code>각 부분 문자열을 순서대로 이어 붙인 문자열은 "programmers"입니다. 따라서 "programmers"를 return 합니다.
 </code></pre></div>
+
+---
+
+### 풀이
+
+`my_strings`와 `parts`를 순회하면서 `parts[i] = [s, e]`를 꺼낸 뒤 `my_strings[i].slice(s, e + 1)`로 부분 문자열을 잘라 `answer`에 순서대로 이어 붙였다. 순회 구간이 `e`까지 포함이라 `slice`의 끝 인덱스에 `e + 1`을 사용했다.
+
+### 소스 코드
+
+```javascript
+function solution(my_strings, parts) {
+  let answer = '';
+
+  for (let i = 0; i < my_strings.length; i++) {
+    let s = parts[i][0];
+    let e = parts[i][1];
+
+    let str = my_strings[i].slice(s, e + 1);
+    answer += str;
+  }
+
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
