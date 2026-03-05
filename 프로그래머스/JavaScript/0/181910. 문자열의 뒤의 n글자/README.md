@@ -1,6 +1,6 @@
-# [level 0] 문자열의 뒤의 n글자 - 181910 
+# [level 0] 문자열의 뒤의 n글자 - 181910
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181910) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181910)
 
 ### 성능 요약
 
@@ -70,5 +70,22 @@
 <li>예제 2번의 <code>my_string</code>에서 뒤의 5글자는 "W0r1d"이므로 이 문자열을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문자열의 길이에서 `n`을 뺀 인덱스부터 끝까지 `slice()`로 잘라 뒤의 `n`글자를 구했다.  
+`my_string.length - n`을 시작 인덱스로 사용해 원하는 부분 문자열을 반환했다.
+
+### 소스 코드
+
+```javascript
+function solution(my_string, n) {
+  let answer = my_string.slice(my_string.length - n);
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
