@@ -1,6 +1,6 @@
-# [level 0] 접미사 배열 - 181909 
+# [level 0] 접미사 배열 - 181909
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181909) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181909)
 
 ### 성능 요약
 
@@ -67,5 +67,29 @@
 <li>예제 2번의 <code>my_string</code>는 "programmers"이고 모든 접미사는 "programmers", "rogrammers", "ogrammers", "grammers", "rammers", "ammers", "mmers", "mers", "ers", "rs", "s"입니다. 이를 사전순으로 정렬한 문자열 배열 ["ammers", "ers", "grammers", "mers", "mmers", "ogrammers", "programmers", "rammers", "rogrammers", "rs", "s"]를 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+접미사는 특정 인덱스부터 문자열 끝까지 이어지는 문자열이라는 점을 먼저 생각했다. 따라서 문자열의 모든 인덱스 `i`를 시작점으로 잡고 `slice(i)`를 사용하면 해당 위치부터 끝까지의 접미사를 만들 수 있다고 판단했다. 이렇게 모든 접미사를 배열에 저장한 뒤 문제에서 요구하는 사전순 정렬을 위해 `sort()`를 사용해 정렬했다.
+
+### 소스 코드
+
+```javascript
+function solution(my_string) {
+  let answer = [];
+
+  for (let i = 0; i < my_string.length; i++) {
+    let str = my_string.slice(i);
+    answer.push(str);
+  }
+
+  answer.sort();
+
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
