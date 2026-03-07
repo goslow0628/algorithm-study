@@ -1,6 +1,6 @@
-# [level 0] 접미사인지 확인하기 - 181908 
+# [level 0] 접미사인지 확인하기 - 181908
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181908) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181908)
 
 ### 성능 요약
 
@@ -93,5 +93,26 @@
 <li>예제 4번에서 <code>is_suffix</code>가 <code>my_string</code>의 접미사가 아니기 때문에 0을 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+접미사는 문자열의 끝부분에 위치하는 문자열이라는 점을 생각해서 `my_string`의 뒤에서 `is_suffix` 길이만큼 잘라낸 문자열이 `is_suffix`와 같다면 접미사라고 생각했다. 이를 위해 `my_string`의 길이에서 `is_suffix`의 길이를 빼서 시작 인덱스를 구하고 `slice()`로 뒤의 문자열을 잘라 두 문자열을 비교하는 방식으로 해결했다.
+
+### 소스 코드
+
+```javascript
+function solution(my_string, is_suffix) {
+  let answer = 0;
+
+  if (my_string.slice(my_string.length - is_suffix.length) === is_suffix) {
+    answer = 1;
+  }
+
+  return answer;
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
