@@ -1,6 +1,6 @@
-# [level 0] 배열 만들기 3 - 181895 
+# [level 0] 배열 만들기 3 - 181895
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181895) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181895)
 
 ### 성능 요약
 
@@ -69,5 +69,27 @@
 <li>따라서 이 두 배열을 앞뒤로 붙인 배열인 [2, 3, 4, 1, 2, 3, 4, 5]를 return 합니다.</li>
 </ul>
 
+---
+
+### 풀이
+
+문제를 보고 `intervals`에 들어 있는 두 구간을 각각 잘라서 앞뒤로 이어 붙이면 된다고 생각했다.  
+구간은 닫힌 구간이므로 `slice()`를 사용할 때 끝 인덱스를 포함시키기 위해 `b + 1`로 잘랐다.  
+이후 두 배열을 `concat()`으로 이어 붙여 결과를 만들었다.
+
+### 소스 코드
+
+```javascript
+function solution(arr, intervals) {
+  const a1 = intervals[0][0];
+  const b1 = intervals[0][1];
+  const a2 = intervals[1][0];
+  const b2 = intervals[1][1];
+
+  return arr.slice(a1, b1 + 1).concat(arr.slice(a2, b2 + 1));
+}
+```
+
+---
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
